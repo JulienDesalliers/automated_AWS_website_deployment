@@ -1,5 +1,5 @@
 import boto3
-
+import folder_parser
 def create_ec2_instance(instance_type, name):
     user_data = '''#!/bin/bash
 cd /home/ubuntu
