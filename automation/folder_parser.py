@@ -6,4 +6,4 @@ def parse_folder_to_script():
         with open(server_directory + "/" + filename) as file:
             script += "sudo touch %s\n" %filename
             script += "cat <<EOT >> " + filename + "\n" + file.read() + "EOT\n"
-    print(script)
+    return script
