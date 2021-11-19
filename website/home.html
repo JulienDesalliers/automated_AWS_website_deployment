@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>my website</title>
+        <script src="script.js"></script>
+        <style>
+            .content {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }</style>
+    </head>
+<body>
+    <div class="content">
+        <h3 id="response"></h3>
+        <button  onclick="httpGet()">Click me to say hi to the EC2 instance</button>
+    </div>
+</body>
+</html>
