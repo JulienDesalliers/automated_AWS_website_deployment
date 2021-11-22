@@ -1,4 +1,4 @@
-const server_ip ="123"
+const server_ip ="http://54.160.195.210"
 function httpGet()
 {
     var xmlHttp = new XMLHttpRequest();
