@@ -1,7 +1,8 @@
+const server_ip ="123"
 function httpGet()
 {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "http://127.0.0.1:80/", false );
+    xmlHttp.open( "GET", server_ip, false );
     xmlHttp.send( null );
     var message = JSON.parse(xmlHttp.responseText).message
     document.getElementById("response").innerHTML = message
