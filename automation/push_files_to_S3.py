@@ -16,7 +16,10 @@ def replace_ip_address(new_ip_address):
 def upload_file(bucket, file_name, path_to_file):
     s3_client = boto3.client('s3')
     try:
-        s3_client.upload_file(path_to_file, bucket, file_name)
+        if str(file_name).endswith('.html'):
+            s3_client.upload_file(path_to_file, bucket, file_name, ExtraArgs={'ContentType':'text/html'})
+        else:
+            s3_client.upload_file(path_to_file, bucket, file_name)
     except Exception as e:
         print(e)
 
