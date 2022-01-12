@@ -3,6 +3,7 @@ import re
 import boto3
 import json
 
+#Je n'avais pas d'address ip statique donc je devais la changer à chaque nouvelle instance EC2.
 def replace_ip_address(new_ip_address):
     script_js_file = os.path.dirname(os.getcwd()) + '/website/script.js'
     file_read = open(script_js_file, 'rt')

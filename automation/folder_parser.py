@@ -1,4 +1,8 @@
 import os
+
+#petite fonction qui permet de parser les files du serveur pour les cat dans l'instance EC2 par l'argument user_data
+#idealement ca devrait etre fait par SCP :)
+
 def parse_folder_to_script():
     script = ''
     server_directory = os.path.dirname(os.getcwd()) + '/server'

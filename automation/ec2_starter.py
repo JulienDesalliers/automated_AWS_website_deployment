@@ -1,6 +1,6 @@
 import boto3
-
 from folder_parser import parse_folder_to_script
+
 def create_ec2_instance(instance_type, security_group, key_name):
     user_data = "#!/bin/bash\nmkdir server\ncd server\nsudo apt update\nsudo apt install nodejs -y\n sudo apt install npm -y\n%s\nsudo npm i\nsudo node app.js\n"%parse_folder_to_script()
     try:
@@ -14,6 +14,7 @@ def create_ec2_instance(instance_type, security_group, key_name):
             SecurityGroups = [security_group],
             UserData = user_data,
         )
+        #TODO: name the instance and retrieve the instance id from its name instead of this
         instance_id = instances['Instances'][0]['InstanceId']
         ip_address = None
         while ip_address is None:
